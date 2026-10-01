@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<queries>
+  <query key="CreateSourceTable">
+    <mssql><![CDATA[create table {0}
+ ([ReportSessionId] varchar(256) NOT NULL,
+  [Id] nvarchar(max) NOT NULL,
+  [ParentId] nvarchar(max) NULL,
+  [Subject] nvarchar(max) NULL,
+  [TaskHyperlink] nvarchar(max) NULL,
+  [ParentTaskHyperlink] nvarchar(max) NULL,
+  [EmployeeName] nvarchar(max) NOT NULL,
+  [ActiveText] nvarchar(max) NULL,
+  [Performers] nvarchar(max) NULL,
+  [Observers] nvarchar(max) NULL,
+  [Created] nvarchar(max) NOT NULL,
+  [Deadline] nvarchar(max) NULL,
+  [Status] nvarchar(max) NULL,
+  [TaskId] nvarchar(max) NULL,
+  [ParentTaskId] nvarchar(max) NULL)]]></mssql>
+    <postgres><![CDATA[create table {0}
+ (ReportSessionId citext NOT NULL,
+  Id citext NOT NULL,
+  ParentId citext NULL,
+  Subject citext NULL,
+  TaskHyperlink citext NULL,
+  ParentTaskHyperlink citext NULL,
+  EmployeeName citext NOT NULL,
+  ActiveText citext NULL,
+  Performers citext NULL,
+  Observers citext NULL,
+  Created citext NOT NULL,
+  Deadline citext NULL,
+  Status citext NULL,
+  TaskId citext NULL,
+  ParentTaskId citext NULL)]]></postgres>
+  </query>
+  <query key="SelectDataFromTempTable">
+    <default><![CDATA[select *
+from  Akelon_Reports_CorrespondenceHistory temp
+where ReportSessionId = @ReportSessionId]]></default>
+  </query>
+</queries>

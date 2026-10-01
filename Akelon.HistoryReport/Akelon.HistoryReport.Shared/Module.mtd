@@ -1,0 +1,70 @@
+{
+  "$type": "Sungero.Metadata.ModuleMetadata, Sungero.Metadata",
+  "NameGuid": "c9b611ca-c4b7-45ba-8e17-a5bdd8ee211c",
+  "Name": "HistoryReport",
+  "AsyncHandlers": [],
+  "ClientAssemblyName": "Akelon.HistoryReport.Client",
+  "ClientBaseAssemblyName": "Akelon.HistoryReport.ClientBase",
+  "ClientBaseNamespace": "Akelon.HistoryReport.ClientBase",
+  "ClientNamespace": "Akelon.HistoryReport.Client",
+  "Code": "History",
+  "CompanyCode": "Akelon",
+  "Cover": {
+    "NameGuid": "86661357-a16d-4e2f-b2f0-b045a4c763d6",
+    "Actions": [],
+    "Background": null,
+    "Footer": {
+      "NameGuid": "f2e3eff7-1054-4cab-a3e3-416fa2273e10",
+      "BackgroundPosition": "Stretch"
+    },
+    "Groups": [],
+    "Header": {
+      "NameGuid": "4939b438-fbe7-4616-a483-a989cc9ec75b",
+      "BackgroundPosition": "Stretch"
+    },
+    "RemoteControls": [],
+    "Tabs": []
+  },
+  "Dependencies": [
+    {
+      "Id": "21738dbd-ee2b-4bdd-aaf5-7fe5eae34a2e",
+      "IsSolutionModule": true,
+      "MaxVersion": "",
+      "MinVersion": ""
+    }
+  ],
+  "ExplorerTreeOrder": [
+    {
+      "ItemId": "58e62264-8826-4f8a-bd9b-483ab2c7f26e"
+    }
+  ],
+  "HandledEvents": [
+    "InitializingServer"
+  ],
+  "Importance": "Medium",
+  "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "InterfaceNamespace": "Akelon.HistoryReport",
+  "IsolatedAssemblyName": "Akelon.HistoryReport.Isolated",
+  "IsolatedNamespace": "Akelon.HistoryReport.Isolated",
+  "IsVisible": false,
+  "PublicStructures": [],
+  "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "ResourceInterfaceNamespace": "Akelon.HistoryReport",
+  "ServerAssemblyName": "Akelon.HistoryReport.Server",
+  "ServerNamespace": "Akelon.HistoryReport.Server",
+  "SharedAssemblyName": "Akelon.HistoryReport.Shared",
+  "SharedNamespace": "Akelon.HistoryReport.Shared",
+  "SpecialFolders": [],
+  "Version": "0.0.1.0",
+  "Widgets": [],
+  "Versions": [
+    {
+      "Type": "ModuleMetadata",
+      "Number": 12
+    },
+    {
+      "Type": "DomainApi",
+      "Number": 3
+    }
+  ]
+}

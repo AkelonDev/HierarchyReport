@@ -1,0 +1,60 @@
+{
+  "$type": "Sungero.Metadata.SolutionMetadata, Sungero.Metadata",
+  "NameGuid": "21738dbd-ee2b-4bdd-aaf5-7fe5eae34a2e",
+  "Name": "Reports",
+  "AsyncHandlers": [],
+  "ClientAssemblyName": "Akelon.Reports.Client",
+  "ClientBaseAssemblyName": "Akelon.Reports.ClientBase",
+  "ClientBaseNamespace": "Akelon.Reports.ClientBase",
+  "ClientNamespace": "Akelon.Reports.Client",
+  "Code": "Reports",
+  "CompanyCode": "Akelon",
+  "Cover": {
+    "NameGuid": "7abd361a-5228-4825-b9d3-e428151b23b8",
+    "Actions": [],
+    "Background": null,
+    "Footer": {
+      "NameGuid": "e42a23de-78e0-4049-95f7-2016da8f2f3c",
+      "BackgroundPosition": "Stretch"
+    },
+    "Groups": [],
+    "Header": {
+      "NameGuid": "fc0b165a-554f-45eb-a978-f476e8862157",
+      "BackgroundPosition": "Stretch"
+    },
+    "RemoteControls": [],
+    "Tabs": []
+  },
+  "DesktopViews": [],
+  "Importance": "Medium",
+  "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "InterfaceNamespace": "Akelon.Reports",
+  "IsolatedAssemblyName": "Akelon.Reports.Isolated",
+  "IsolatedNamespace": "Akelon.Reports.Isolated",
+  "IsVisible": false,
+  "OrderedSpecialFolders": [],
+  "PublicStructures": [],
+  "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "ResourceInterfaceNamespace": "Akelon.Reports",
+  "ServerAssemblyName": "Akelon.Reports.Server",
+  "ServerNamespace": "Akelon.Reports.Server",
+  "SharedAssemblyName": "Akelon.Reports.Shared",
+  "SharedNamespace": "Akelon.Reports.Shared",
+  "SpecialFolders": [],
+  "Version": "0.0.1.0",
+  "Widgets": [],
+  "Versions": [
+    {
+      "Type": "SolutionMetadata",
+      "Number": 12
+    },
+    {
+      "Type": "ModuleMetadata",
+      "Number": 12
+    },
+    {
+      "Type": "DomainApi",
+      "Number": 3
+    }
+  ]
+}

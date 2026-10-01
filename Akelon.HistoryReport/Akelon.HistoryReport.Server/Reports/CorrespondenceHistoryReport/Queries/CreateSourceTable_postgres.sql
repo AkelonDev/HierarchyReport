@@ -1,0 +1,16 @@
+create table {0}
+ (ReportSessionId citext NOT NULL,
+  Id citext NOT NULL,
+  ParentId citext NULL,
+  Subject citext NULL,
+  TaskHyperlink citext NULL,
+  ParentTaskHyperlink citext NULL,
+  EmployeeName citext NOT NULL,
+  ActiveText citext NULL,
+  Performers citext NULL,
+  Observers citext NULL,
+  Created citext NOT NULL,
+  Deadline citext NULL,
+  Status citext NULL,
+  TaskId citext NULL,
+  ParentTaskId citext NULL)

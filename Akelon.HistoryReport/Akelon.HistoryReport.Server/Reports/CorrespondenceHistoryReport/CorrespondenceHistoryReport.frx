@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReferencedAssemblies="System.dll&#13;&#10;System.Drawing.dll&#13;&#10;System.Data.dll&#13;&#10;System.Xml.dll&#13;&#10;FastReport.Compat.dll&#13;&#10;System.Windows.Forms.dll&#13;&#10;FastReport.DataVisualization.dll&#13;&#10;Sungero.Domain.Shared&#13;&#10;Sungero.CoreEntities.Shared&#13;&#10;Sungero.Reporting.Shared&#13;&#10;CommonLibrary&#13;&#10;Sungero.Localization&#13;&#10;Sungero.Declension&#13;&#10;Sungero.Domain&#13;&#10;Sungero.Workflow.Shared&#13;&#10;Sungero.Workflow.Server&#13;&#10;Sungero.Workflow.Interfaces&#13;&#10;Sungero.Domain.Interfaces&#13;&#10;Akelon.HistoryReport.Shared&#13;&#10;Akelon.HistoryReport.Server" ReportInfo.CreatorVersion="2024.2.19.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+using Sungero.Workflow;
+using Sungero.Domain.Shared;
+using Sungero.CoreEntities;
+using Sungero.Core;
+using Resources = Akelon.HistoryReport.Reports.Resources;
+
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+  }
+}
+  </ScriptText>
+  <Dictionary>
+    <SungeroSqlDataConnection Name="Sungero_Connection" Restrictions="DontModify, DontEdit, DontDelete, HideAllProperties" ConnectionStringExpression="[SungeroConnectionString]" CommandTimeout="120">
+      <TableDataSource Name="Table" Alias="SourceTable" DataType="System.Int32" Enabled="true" CanEdit="true" SelectCommand="${SelectDataFromTempTable}">
+        <Column Name="Id" DataType="System.String" PropName="Column"/>
+        <Column Name="ParentId" DataType="System.String" PropName="Column"/>
+        <Column Name="Subject" DataType="System.String" PropName="Column"/>
+        <Column Name="EmployeeName" DataType="System.String" PropName="Column"/>
+        <Column Name="Created" DataType="System.String" PropName="Column"/>
+        <Column Name="Status" DataType="System.String" PropName="Column"/>
+        <Column Name="Deadline" DataType="System.String" PropName="Column"/>
+        <Column Name="ActiveText" DataType="System.String" PropName="Column"/>
+        <Column Name="Performers" DataType="System.String" PropName="Column"/>
+        <Column Name="TaskHyperlink" DataType="System.String" PropName="Column"/>
+        <Column Name="TaskId" DataType="System.String" PropName="Column"/>
+        <Column Name="ParentTaskId" DataType="System.String" PropName="Column"/>
+        <Column Name="ParentTaskHyperlink" DataType="System.String" PropName="Column"/>
+        <Column Name="Observers" DataType="System.String" PropName="Column"/>
+        <CommandParameter Name="ReportSessionId" DataType="16" IsDbType="true" Expression="[ReportSessionId]"/>
+      </TableDataSource>
+    </SungeroSqlDataConnection>
+    <SungeroParameter Name="SungeroConnectionString" Restrictions="DontModify, DontEdit, DontDelete, HideAllProperties, DontShow" AsString="" Id="75a95d9c-20af-4929-8681-c3d5ff2feff3" IsRequired="false" IsCollection="false" InternalDataType="System.String" IsSimpleDataType="false" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
+    <SungeroParameter Name="ReportSessionId" AsString="" Id="c2931021-0de4-4c85-93f0-229e0345b0af" IsRequired="false" IsCollection="false" InternalDataType="System.String" IsSimpleDataType="false" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
+    <SungeroParameter Name="Task" AsString="" Id="1dcd445a-1e81-48f6-b82f-875e148d25ef" IsRequired="false" IsCollection="false" InternalDataType="Sungero.Workflow.ITask, Sungero.Workflow.Interfaces" IsSimpleDataType="false" EntityTypeId="d795d1f6-45c1-4e5e-9677-b53fb7280c7e"/>
+    <SungeroParameter Name="Subject" AsString="" Id="8dfd2815-ddda-4a5a-ae1b-e723a1aa44a3" IsRequired="false" IsCollection="false" InternalDataType="System.String" IsSimpleDataType="false" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
+    <SungeroParameter Name="Level" AsString="" Id="0d70c9e2-8621-45b6-8935-9541252da1f3" IsRequired="false" IsCollection="false" InternalDataType="System.Int32" IsSimpleDataType="true" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <PageHeaderBand Name="PageHeader1" Width="718.2" Height="37.8" Guides="18.9">
+      <TextObject Name="Text8" Width="151.2" Height="37.8" Text="[Date]" Font="Arial, 10pt"/>
+      <TextObject Name="Text9" Left="151.2" Width="567" Height="37.8" Text="[Subject]" HorzAlign="Center" Font="Arial, 10pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="41.8" Width="718.2" Height="85.05" Border.Lines="All" Border.Color="Silver" CanGrow="true" Guides="0" DataSource="Table" IdColumn="SourceTable.Id" ParentIdColumn="SourceTable.ParentId" Indent="18.9">
+      <TextObject Name="Text1" Width="491.4" Height="18.9" Border.Color="DarkGray" Hyperlink.Expression="[SourceTable.TaskHyperlink]" CanGrow="true" GrowToBottom="true" Text="[SourceTable.Subject]" Font="Arial, 10pt, style=Bold" TextFill.Color="DarkGray"/>
+      <TextObject Name="Text2" Top="18.9" Width="302.4" Height="37.8" Border.Color="DarkGray" CanGrow="true" GrowToBottom="true" Text="[SourceTable.EmployeeName]" Font="Arial, 10pt" TextFill.Color="DarkGray" TextRenderType="HtmlParagraph"/>
+      <TextObject Name="Text3" Left="302.4" Top="18.9" Width="151.2" Height="37.8" CanGrow="true" GrowToBottom="true" Text="[SourceTable.Created]" Font="Arial, 10pt" TextFill.Color="DarkGray">
+        <Formats>
+          <DateFormat Format=""/>
+          <GeneralFormat/>
+        </Formats>
+      </TextObject>
+      <TextObject Name="Text4" Left="453.6" Top="18.9" Width="264.6" Height="18.9" Anchor="Top, Left, Right" Border.Color="DarkGray" Text="[SourceTable.Deadline]" HideZeros="true" Font="Arial, 10pt" TextFill.Color="DarkGray">
+        <Formats>
+          <DateFormat Format=""/>
+          <GeneralFormat/>
+        </Formats>
+      </TextObject>
+      <TextObject Name="Text5" Top="56.7" Width="718.2" Height="9.45" Anchor="Top, Left, Right" Border.Color="DarkGray" CanGrow="true" CanShrink="true" GrowToBottom="true" Text="[SourceTable.ActiveText]" HideZeros="true" Font="Arial, 10pt"/>
+      <TextObject Name="Text6" Left="453.6" Top="37.8" Width="264.6" Height="18.9" Anchor="Top, Left, Right" Border.Color="DarkGray" Text="[SourceTable.Status]" Font="Arial, 10pt" TextFill.Color="DarkGray"/>
+      <TextObject Name="Text7" Top="66.15" Width="718.2" Height="9.45" Anchor="Top, Left, Right" Border.Color="DarkGray" CanGrow="true" CanShrink="true" GrowToBottom="true" Text="[SourceTable.Performers]" HideZeros="true" Font="Arial, 10pt" TextFill.Color="DarkGray"/>
+      <TextObject Name="Text10" Left="491.4" Width="113.4" Height="18.9" Anchor="Top, Right" Border.Color="DarkGray" Cursor="Hand" Hyperlink.Expression="[SourceTable.TaskHyperlink]" Text="[SourceTable.TaskId]" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt, style=Underline" TextFill.Color="Blue"/>
+      <TextObject Name="Text11" Left="604.8" Width="113.4" Height="18.9" Anchor="Top, Right" Border.Color="DarkGray" Cursor="Hand" Hyperlink.Expression="[SourceTable.ParentTaskHyperlink]" Text="[SourceTable.ParentTaskId]" WordWrap="false" Font="Arial, 10pt, style=Underline" TextFill.Color="Blue"/>
+      <TextObject Name="Text12" Top="75.6" Width="718.2" Height="9.45" Anchor="Top, Left, Right" Border.Color="DarkGray" CanGrow="true" CanShrink="true" GrowToBottom="true" Text="[SourceTable.Observers]" HideZeros="true" Font="Arial, 10pt" TextFill.Color="DarkGray"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="130.85" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

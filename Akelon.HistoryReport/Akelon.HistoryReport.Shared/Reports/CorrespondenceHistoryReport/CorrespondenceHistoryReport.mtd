@@ -1,0 +1,75 @@
+{
+  "$type": "Sungero.Metadata.ReportMetadata, Sungero.Reporting.Shared",
+  "NameGuid": "58e62264-8826-4f8a-bd9b-483ab2c7f26e",
+  "Name": "CorrespondenceHistoryReport",
+  "AssociatedGuid": "c9b611ca-c4b7-45ba-8e17-a5bdd8ee211c",
+  "BaseGuid": "cef9a810-3f30-4eca-9fe3-30992af0b818",
+  "DataSources": [],
+  "DefaultExportFormat": "Pdf",
+  "ExportFormats": [
+    "Pdf"
+  ],
+  "HandledEvents": [
+    "BeforeExecuteServer",
+    "AfterExecuteServer"
+  ],
+  "IconResourcesKeys": [],
+  "IntegrationServiceName": "NaumenCorrespondenceHistoryReport",
+  "Overridden": [
+    "HandledEvents",
+    "Parameters",
+    "PublicStructures",
+    "PublicConstants"
+  ],
+  "Parameters": [
+    {
+      "NameGuid": "c2931021-0de4-4c85-93f0-229e0345b0af",
+      "Name": "ReportSessionId",
+      "InternalDataTypeName": "System.String"
+    },
+    {
+      "NameGuid": "1dcd445a-1e81-48f6-b82f-875e148d25ef",
+      "Name": "Task",
+      "EntityType": "d795d1f6-45c1-4e5e-9677-b53fb7280c7e",
+      "InternalDataTypeName": "Sungero.Workflow.ITask, Sungero.Workflow.Interfaces"
+    },
+    {
+      "NameGuid": "8dfd2815-ddda-4a5a-ae1b-e723a1aa44a3",
+      "Name": "Subject",
+      "InternalDataTypeName": "System.String"
+    },
+    {
+      "NameGuid": "0d70c9e2-8621-45b6-8935-9541252da1f3",
+      "Name": "Level",
+      "InternalDataTypeName": "System.Int32",
+      "IsSimpleDataType": true
+    }
+  ],
+  "PublicConstants": [
+    {
+      "Name": "Semicolon",
+      "ParentClasses": [
+        "CorrespondenceHistoryReport",
+        "Delimeters"
+      ],
+      "TypeName": "System.String",
+      "Value": "\"; \""
+    }
+  ],
+  "PublicStructures": [],
+  "ResourcesKeys": [
+    "To",
+    "Deadline",
+    "TaskId",
+    "EmployeeName",
+    "ParentTaskId",
+    "SubtaskText",
+    "Observers"
+  ],
+  "Versions": [
+    {
+      "Type": "ReportMetadata",
+      "Number": 1
+    }
+  ]
+}

@@ -41,8 +41,7 @@
     {
       "NameGuid": "0d70c9e2-8621-45b6-8935-9541252da1f3",
       "Name": "Level",
-      "InternalDataTypeName": "System.Int32",
-      "IsSimpleDataType": true
+      "InternalDataTypeName": "System.Int32"
     }
   ],
   "PublicConstants": [

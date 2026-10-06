@@ -16,6 +16,8 @@ namespace Akelon.HistoryReport
 
     public override void BeforeExecute(Sungero.Reporting.Server.BeforeExecuteEventArgs e)
     {
+      // Формирование отчета является ресурсоемкой операцией из-за использования вложенных циклов при обработке запусков задач, подзадач и их заданий.
+      // При большом объеме данных или увеличении максимального уровня иерархии - время его формирования может возрастать.      
       var reportSessionId = System.Guid.NewGuid().ToString();
       var tableData = new List<Structures.CorrespondenceHistoryReport.TableLine>();
       CorrespondenceHistoryReport.ReportSessionId = reportSessionId;
@@ -24,7 +26,7 @@ namespace Akelon.HistoryReport
       CorrespondenceHistoryReport.Level = 1;
       var assignments = Sungero.Workflow.Assignments.GetAll(x => Equals(x.Task, task));
       
-      // Задача с разделением по StartId.
+      // Заполнение информации по каждому запуску задачи, с разделением по StartId.
       for (var startId = 1; startId <= task.StartId; startId++)
       {
         var row = Structures.CorrespondenceHistoryReport.TableLine.Create();
@@ -43,11 +45,11 @@ namespace Akelon.HistoryReport
         
         tableData.Add(row);
         
-        // Подзадачи задачи.
+        // Заполнение информации про подзадачи текущей итерации запуска задачи.
         FillSubTasks(task.Subtasks.Where(x => x.ParentStartId == startId), tableData, null);
       }
       
-      // Задания.
+      // Заполнение информации про задания основной задачи.
       FillAssignments(assignments, tableData, null);
       
       foreach (var row in tableData)
@@ -57,7 +59,7 @@ namespace Akelon.HistoryReport
     }
     
     /// <summary>
-    /// Заполнить таблицу заданиями.
+    /// Заполнение таблицы отчета данными про заданиями.
     /// </summary>
     /// <param name="assignments">Задания.</param>
     /// <param name="tableData">Таблица.</param>
@@ -80,7 +82,7 @@ namespace Akelon.HistoryReport
         
         tableData.Add(row);
         
-        // Подзадачи. Макс. уровень иерархии - 10.
+        // Заполнение информации про подзадачи, созданные в рамках текущего задания. Макс. уровень иерархии - 10.
         if (CorrespondenceHistoryReport.Level < 11)
           FillSubTasks(assignment.Subtasks, tableData, assignmentId);
         else
@@ -89,7 +91,7 @@ namespace Akelon.HistoryReport
     }
     
     /// <summary>
-    /// Заполнить таблицу подзадачами.
+    /// Заполнение таблицы отчета данными про подзадачи.
     /// </summary>
     /// <param name="subTasks">Подзадачи.</param>
     /// <param name="tableData">Таблица.</param>
@@ -103,7 +105,7 @@ namespace Akelon.HistoryReport
     
       foreach (var subTask in subTasks)
       {
-        // Подзадачи с разделением по StartId.
+        // Заполнение информации по каждому запуску подзадачи, с разделением по StartId.
         for (var startId = 1; startId <= subTask.StartId; startId++)
         {
           var subTaskText = subTask.Texts.Where(x => x.StartId == startId).FirstOrDefault();
@@ -139,7 +141,7 @@ namespace Akelon.HistoryReport
           
           tableData.Add(row);
           
-          // Задания подзадачи.
+          // Заполнение информации про задания текущей итерации запуска подзадачи.
           FillAssignments(subAssignments, tableData, row.ParentId);
         }
       }

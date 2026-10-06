@@ -6,7 +6,7 @@ using Sungero.CoreEntities;
 
 namespace Akelon.HistoryReport
 {
-  partial class CorrespondenceHistoryReportClientHandlers
+  partial class HierarchyReportClientHandlers
   {
 
   }

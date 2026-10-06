@@ -3,7 +3,7 @@ using Sungero.Core;
 
 namespace Akelon.HistoryReport.Constants
 {
-  public static class CorrespondenceHistoryReport
+  public static class HierarchyReport
   {
 
     /// <summary>

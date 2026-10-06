@@ -21,10 +21,10 @@ namespace Akelon.HistoryReport.Server
     public void CreateTablesForReports()
     {
       // Создание таблицы для отчета "История переписки".
-      var hierarchyReportTableName = Constants.CorrespondenceHistoryReport.SourceTableName;
+      var hierarchyReportTableName = Constants.HierarchyReport.SourceTableName;
       
       Sungero.Docflow.PublicFunctions.Module.DropReportTempTables(new[] { hierarchyReportTableName });
-      Sungero.Docflow.PublicFunctions.Module.ExecuteSQLCommandFormat(Queries.CorrespondenceHistoryReport.CreateSourceTable, new[] { hierarchyReportTableName });
+      Sungero.Docflow.PublicFunctions.Module.ExecuteSQLCommandFormat(Queries.HierarchyReport.CreateSourceTable, new[] { hierarchyReportTableName });
     }
   }
 }

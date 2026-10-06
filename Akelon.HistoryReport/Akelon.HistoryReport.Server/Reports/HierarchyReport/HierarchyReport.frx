@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Report ScriptLanguage="CSharp" ReferencedAssemblies="System.dll&#13;&#10;System.Drawing.dll&#13;&#10;System.Data.dll&#13;&#10;System.Xml.dll&#13;&#10;FastReport.Compat.dll&#13;&#10;System.Windows.Forms.dll&#13;&#10;FastReport.DataVisualization.dll&#13;&#10;Sungero.Domain.Shared&#13;&#10;Sungero.CoreEntities.Shared&#13;&#10;Sungero.Reporting.Shared&#13;&#10;CommonLibrary&#13;&#10;Sungero.Localization&#13;&#10;Sungero.Declension&#13;&#10;Sungero.Domain&#13;&#10;Sungero.Workflow.Shared&#13;&#10;Sungero.Workflow.Server&#13;&#10;Sungero.Workflow.Interfaces&#13;&#10;Sungero.Domain.Interfaces&#13;&#10;Akelon.HistoryReport.Shared&#13;&#10;Akelon.HistoryReport.Server" ReportInfo.CreatorVersion="2024.2.19.0">
   <ScriptText>using System;
 using System.Collections;
@@ -50,10 +50,10 @@ namespace FastReport
       </TableDataSource>
     </SungeroSqlDataConnection>
     <SungeroParameter Name="SungeroConnectionString" Restrictions="DontModify, DontEdit, DontDelete, HideAllProperties, DontShow" AsString="" Id="75a95d9c-20af-4929-8681-c3d5ff2feff3" IsRequired="false" IsCollection="false" InternalDataType="System.String" IsSimpleDataType="false" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
-    <SungeroParameter Name="ReportSessionId" AsString="" Id="c2931021-0de4-4c85-93f0-229e0345b0af" IsRequired="false" IsCollection="false" InternalDataType="System.String" IsSimpleDataType="false" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
-    <SungeroParameter Name="Task" AsString="" Id="1dcd445a-1e81-48f6-b82f-875e148d25ef" IsRequired="false" IsCollection="false" InternalDataType="Sungero.Workflow.ITask, Sungero.Workflow.Interfaces" IsSimpleDataType="false" EntityTypeId="d795d1f6-45c1-4e5e-9677-b53fb7280c7e"/>
-    <SungeroParameter Name="Subject" AsString="" Id="8dfd2815-ddda-4a5a-ae1b-e723a1aa44a3" IsRequired="false" IsCollection="false" InternalDataType="System.String" IsSimpleDataType="false" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
-    <SungeroParameter Name="Level" AsString="" Id="0d70c9e2-8621-45b6-8935-9541252da1f3" IsRequired="false" IsCollection="false" InternalDataType="System.Int32" IsSimpleDataType="true" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
+    <SungeroParameter Name="ReportSessionId" AsString="" Id="06ff6905-16ab-45f4-9b11-0aff26cddf8a" IsRequired="false" IsCollection="false" InternalDataType="System.String" IsSimpleDataType="false" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
+    <SungeroParameter Name="Task" AsString="" Id="da36d284-30ed-4573-a983-273483be334a" IsRequired="false" IsCollection="false" InternalDataType="Sungero.Workflow.ITask, Sungero.Workflow.Interfaces" IsSimpleDataType="false" EntityTypeId="d795d1f6-45c1-4e5e-9677-b53fb7280c7e"/>
+    <SungeroParameter Name="Subject" AsString="" Id="78873c93-38c7-40a9-8155-4e4d569713a6" IsRequired="false" IsCollection="false" InternalDataType="System.String" IsSimpleDataType="false" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
+    <SungeroParameter Name="Level" AsString="" Id="62cf8d7b-e946-43cf-98e0-84627c268f5c" IsRequired="false" IsCollection="false" InternalDataType="System.Int32" IsSimpleDataType="true" EntityTypeId="00000000-0000-0000-0000-000000000000"/>
   </Dictionary>
   <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
     <PageHeaderBand Name="PageHeader1" Width="718.2" Height="37.8" Guides="18.9">

@@ -61,7 +61,7 @@
   "Versions": [
     {
       "Type": "ModuleMetadata",
-      "Number": 12
+      "Number": 8
     },
     {
       "Type": "DomainApi",

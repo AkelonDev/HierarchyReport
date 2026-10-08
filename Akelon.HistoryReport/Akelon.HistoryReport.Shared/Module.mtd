@@ -35,7 +35,8 @@
   ],
   "ExplorerTreeOrder": [
     {
-      "ItemId": "58e62264-8826-4f8a-bd9b-483ab2c7f26e"
+      "ItemId": "0c6371d2-d7e4-48f9-97f5-4f7b79c53d65",
+      "PreviousItemId": "58e62264-8826-4f8a-bd9b-483ab2c7f26e"
     }
   ],
   "HandledEvents": [
@@ -60,7 +61,7 @@
   "Versions": [
     {
       "Type": "ModuleMetadata",
-      "Number": 12
+      "Number": 11
     },
     {
       "Type": "DomainApi",

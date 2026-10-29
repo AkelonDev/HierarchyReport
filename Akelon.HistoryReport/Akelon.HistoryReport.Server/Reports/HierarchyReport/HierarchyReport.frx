@@ -81,9 +81,6 @@ namespace FastReport
       <TextObject Name="Text10" Left="491.4" Width="113.4" Height="18.9" Anchor="Top, Right" Border.Color="DarkGray" Cursor="Hand" Hyperlink.Expression="[SourceTable.TaskHyperlink]" Text="[SourceTable.TaskId]" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt, style=Underline" TextFill.Color="Blue"/>
       <TextObject Name="Text11" Left="604.8" Width="113.4" Height="18.9" Anchor="Top, Right" Border.Color="DarkGray" Cursor="Hand" Hyperlink.Expression="[SourceTable.ParentTaskHyperlink]" Text="[SourceTable.ParentTaskId]" WordWrap="false" Font="Arial, 10pt, style=Underline" TextFill.Color="Blue"/>
       <TextObject Name="Text12" Top="75.6" Width="718.2" Height="9.45" Anchor="Top, Left, Right" Border.Color="DarkGray" CanGrow="true" CanShrink="true" GrowToBottom="true" Text="[SourceTable.Observers]" HideZeros="true" Font="Arial, 10pt" TextFill.Color="DarkGray"/>
-      <Sort>
-        <Sort Expression="[SourceTable.Created]"/>
-      </Sort>
     </DataBand>
     <PageFooterBand Name="PageFooter1" Top="130.85" Width="718.2" Height="18.9"/>
   </ReportPage>

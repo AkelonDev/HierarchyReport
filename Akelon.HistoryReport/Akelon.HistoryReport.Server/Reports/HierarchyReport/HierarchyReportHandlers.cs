@@ -76,7 +76,8 @@ namespace Akelon.HistoryReport
     /// <param name="parentId">ИД родительской задачи.</param>
     public void FillAssignments(IQueryable<Sungero.Workflow.IAssignment> assignments, List<Structures.HierarchyReport.TableLine> tableData, string parentId)
     {
-      foreach (var assignment in assignments)
+      // Сортировка по Дате создания необходима для отображения элементов в том же порядке, как в переписке задачи - т.е. в разрезе блоков иерархии.
+      foreach (var assignment in assignments.OrderBy(x => x.Created))
       {
         var row = Structures.HierarchyReport.TableLine.Create();
         var performer = Sungero.Company.Employees.As(assignment.Performer);
@@ -88,10 +89,10 @@ namespace Akelon.HistoryReport
         row.EmployeeName = Akelon.HistoryReport.Reports.Resources.HierarchyReport.EmployeeNameFormat(performer.Name, performer.Department);
         row.Status = Sungero.Workflow.Assignments.Info.Properties.Status.GetLocalizedValue(assignment.Status);
         
-        // Заполнение идентификатора текущего элемента для построения иерархии отчета. 
+        // Заполнение идентификатора текущего элемента для построения иерархии отчета.
         row.Id = assignmentId;
         
-        // Заполнение идентификатора родительского элемента в иерархии отчета. 
+        // Заполнение идентификатора родительского элемента в иерархии отчета.
         // Для основной задачи и заданий основной задачи parentId равен null, т.к. они находятся на одном уровне иерархии. В иных случаях указывается Id родительского элемента.
         row.ParentId = parentId;
         
@@ -118,7 +119,8 @@ namespace Akelon.HistoryReport
       
       HierarchyReport.Level++;
       
-      foreach (var subTask in subTasks)
+      // Сортировка по Дате создания необходима для отображения элементов в том же порядке, как в переписке задачи - т.е. в разрезе блоков иерархии.
+      foreach (var subTask in subTasks.OrderBy(x => x.Created))
       {
         // Получение общих данных по подзадачам, вне зависимости от итерации запуска.
         var observers = Akelon.HistoryReport.Reports.Resources.HierarchyReport.ObserversFormat(string.Join(Constants.HierarchyReport.Delimeters.Semicolon, subTask.Observers.Select(x => x.Observer.Name)));
@@ -143,7 +145,7 @@ namespace Akelon.HistoryReport
           row.Created = subTaskText.Modified.Value.ToString("g");
           row.Deadline = deadline;
           
-          // Формирование идентификатора текущей подзадачи с учетом ее запусков. 
+          // Формирование идентификатора текущей подзадачи с учетом ее запусков.
           // Одна задача может быть запущена несколько раз, поэтому одного Id подзадачи недостаточно для различия строк, соответствующим разным запускам.
           row.Id = string.Format("{0}_{1}", subTask.Id, startId);
           row.TaskId = Akelon.HistoryReport.Reports.Resources.HierarchyReport.TaskIdFormat(subTask.Id);

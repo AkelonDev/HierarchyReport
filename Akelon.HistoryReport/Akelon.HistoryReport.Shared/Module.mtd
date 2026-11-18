@@ -51,6 +51,7 @@
   "PublicStructures": [],
   "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "ResourceInterfaceNamespace": "Akelon.HistoryReport",
+  "ResourcesKeys": [],
   "ServerAssemblyName": "Akelon.HistoryReport.Server",
   "ServerNamespace": "Akelon.HistoryReport.Server",
   "SharedAssemblyName": "Akelon.HistoryReport.Shared",

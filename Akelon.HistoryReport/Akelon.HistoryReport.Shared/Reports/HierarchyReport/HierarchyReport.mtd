@@ -18,8 +18,8 @@
   "Overridden": [
     "HandledEvents",
     "Parameters",
-    "PublicStructures",
-    "PublicConstants"
+    "PublicConstants",
+    "PublicStructures"
   ],
   "Parameters": [
     {

@@ -33,9 +33,11 @@
   "IsolatedNamespace": "Akelon.Reports.Isolated",
   "IsVisible": false,
   "OrderedSpecialFolders": [],
+  "OverrideSuffix": "Akelon",
   "PublicStructures": [],
   "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "ResourceInterfaceNamespace": "Akelon.Reports",
+  "ResourcesKeys": [],
   "ServerAssemblyName": "Akelon.Reports.Server",
   "ServerNamespace": "Akelon.Reports.Server",
   "SharedAssemblyName": "Akelon.Reports.Shared",
@@ -46,7 +48,7 @@
   "Versions": [
     {
       "Type": "SolutionMetadata",
-      "Number": 12
+      "Number": 13
     },
     {
       "Type": "ModuleMetadata",
